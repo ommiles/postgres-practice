@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:index, :update, :destroy]
-    skip_before_action :authorized, only: [:show, :login]
+    before_action :authorized, only: [:update, :destroy, :profile]
+    skip_before_action :authorized, only: [:create, :index, :show, :login]
     def index
         users = User.all
         render json: users, except: [:password_digest]
     end
 
     def show
-        user = User.find_by(:id)
+        user = User.find(params[:id])
         render json: user
     end
 
@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     def destroy
         user = User.find(params[:id])
         user.destroy
+    end
+
+    def profile
+        render json: { user: current_user }, status: :accepted
     end
 
     private
