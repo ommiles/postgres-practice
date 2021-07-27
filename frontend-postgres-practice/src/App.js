@@ -1,12 +1,13 @@
 import './App.css';
-import Pages from './Components/Pages';
+import { BrowserRouter } from 'react-router-dom';
+import { Nav } from './Shared/Nav';
+import { Routes } from './Components/Routes/Routes';
 
-export default function App() {
+export const App = () => {
   return (
-    <div className='App'>
-      <Pages.Signup />
-      <Pages.Login />
-      <Pages.Home />
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <Routes />
+    </BrowserRouter>
   );
-}
+};
