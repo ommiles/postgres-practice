@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :users
   post '/login' => 'auth#login'
-  get '/profile' => 'users#profile'
+  get '/get_user' => 'users#get_user'
 end

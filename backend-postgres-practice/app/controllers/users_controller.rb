@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:update, :destroy, :profile]
+    before_action :authorized, only: [:update, :destroy, :get_user]
     skip_before_action :authorized, only: [:create, :index, :show, :login]
     def index
         users = User.all
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
         user.destroy
     end
 
-    def profile
+    def get_user
         render json: { user: current_user }, status: :accepted
     end
 
