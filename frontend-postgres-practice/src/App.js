@@ -1,13 +1,15 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import { Nav } from './Shared/Nav';
+import { Nav } from './Components/Shared/Nav';
 import { Routes } from './Components/Routes/Routes';
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Nav />
-      <Routes />
-    </BrowserRouter>
+    <div className='App'>
+      <BrowserRouter>
+        <Nav />
+        <Routes />
+      </BrowserRouter>
+    </div>
   );
 };

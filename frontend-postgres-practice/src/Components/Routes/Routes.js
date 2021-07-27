@@ -4,7 +4,7 @@ import Pages from '../Pages';
 
 export const Routes = () => {
   return (
-    <div className='App'>
+    <div className='Routes'>
       <Switch>
         <Route path='/signup' component={Pages.Signup} />
         <Route path='/login' component={Pages.Login} />
